@@ -33,7 +33,7 @@ namespace NerdStore.Catalogo.Domain
             }
 
             _produtoRepository.Atualizar(produto);
-            return await _produtoRepository.UnityOfWork.Commit();
+            return await _produtoRepository.UnitOfWork.Commit();
         }
 
         public async Task<bool> ReporEstoque(Guid produtoId, int quantidade)
@@ -44,7 +44,7 @@ namespace NerdStore.Catalogo.Domain
             produto.ReporEstoque(quantidade);
 
             _produtoRepository.Atualizar(produto);
-            return await _produtoRepository.UnityOfWork.Commit();
+            return await _produtoRepository.UnitOfWork.Commit();
         }
 
         public void Dispose()
